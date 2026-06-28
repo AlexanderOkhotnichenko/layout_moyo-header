@@ -1,3 +1,100 @@
-body {
+@font-face {
+  font-family: Roboto;
+  src: url('Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+ul,
+nav {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 50px;
+}
+
+.logo {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.logo__image {
+  display: block;
+  width: 40px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  position: relative;
+  margin: 0 10px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__item:last-child {
+  margin-right: 0;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  line-height: 20px;
+}
+
+.nav__item.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 8px;
+  background-color: #00acdc;
+}
+
+.nav__link:hover {
+  color: #00acdc;
+}
+
+.nav__item.is-active .nav__link {
+  color: #00acdc;
 }
